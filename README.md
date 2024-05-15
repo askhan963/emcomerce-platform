@@ -19,7 +19,7 @@ Watch the demo on YouTube: [E-Commerce Platform Demo](https://www.youtube.com/wa
 ## Screenshots
 
 ![Home](./screenshots/home.png)
-![Product Details](./screenshots/product-details.png)
+![Product Details](./screenshots/details.png)
 ![Cart](./screenshots/cart.png)
 ![Checkout](./screenshots/checkout.png)
 
