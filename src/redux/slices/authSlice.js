@@ -2,20 +2,31 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import {jwtDecode} from 'jwt-decode';
 
+// Set base URL for axios to target the server at http://localhost:5000
+axios.defaults.baseURL = 'http://localhost:5000';
+
 export const login = createAsyncThunk('auth/login', async (credentials) => {
-  const response = await axios.post('/api/auth/login', credentials);
-  const token = response.data.token;
-  const user = jwtDecode(token);
-  localStorage.setItem('token', token);
-  return user;
+  try {
+    const response = await axios.post('/api/auth/login', credentials);
+    const token = response.data.token;
+    const user = jwtDecode(token);
+    localStorage.setItem('token', token);
+    return user;
+  } catch (error) {
+    throw error.response.data;
+  }
 });
 
 export const signup = createAsyncThunk('auth/signup', async (credentials) => {
-  const response = await axios.post('/api/auth/signup', credentials);
-  const token = response.data.token;
-  const user = jwtDecode(token);
-  localStorage.setItem('token', token);
-  return user;
+  try {
+    const response = await axios.post('/api/auth/signup', credentials);
+    const token = response.data.token;
+    const user = jwtDecode(token);
+    localStorage.setItem('token', token);
+    return user;
+  } catch (error) {
+    throw error.response.data;
+  }
 });
 
 const authSlice = createSlice({

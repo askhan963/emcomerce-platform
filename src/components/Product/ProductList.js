@@ -23,7 +23,7 @@ const ProductList = () => {
       {status === 'succeeded' && (
         <div>
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard key={product._id} product={product} /> // Pass the product as a prop
           ))}
         </div>
       )}

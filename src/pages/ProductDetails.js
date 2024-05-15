@@ -6,7 +6,7 @@ import { addToCart } from '../redux/slices/cartSlice';
 const ProductDetails = () => {
   const { id } = useParams();
   const product = useSelector((state) =>
-    state.products.items.find((product) => product.id === parseInt(id))
+    state.products.items.find((product) => product._id === id)
   );
   const dispatch = useDispatch();
 
