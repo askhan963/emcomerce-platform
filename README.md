@@ -35,7 +35,7 @@ Watch the demo on YouTube: [E-Commerce Platform Demo](https://www.youtube.com/wa
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/yourusername/ecommerce-platform.git
+   git clone https://github.com/askhan963/ecommerce-platform.git
    cd ecommerce-platform
    ```
 
