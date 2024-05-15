@@ -18,12 +18,20 @@ const ProductList = () => {
 
   return (
     <Container>
-      {status === 'loading' && <div>Loading...</div>}
-      {status === 'failed' && <div>{error}</div>}
+      {status === 'loading' && (
+        <div className="flex justify-center items-center py-8">
+          <div className="text-xl font-semibold">Loading...</div>
+        </div>
+      )}
+      {status === 'failed' && (
+        <div className="flex justify-center items-center py-8">
+          <div className="text-xl font-semibold text-red-500">{error}</div>
+        </div>
+      )}
       {status === 'succeeded' && (
-        <div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {products.map((product) => (
-            <ProductCard key={product._id} product={product} /> // Pass the product as a prop
+            <ProductCard key={product._id} product={product} />
           ))}
         </div>
       )}

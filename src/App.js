@@ -9,6 +9,9 @@ import Signup from './pages/Signup';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './index.css'
 function App() {
   return (
@@ -23,6 +26,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
+        <Footer />
+        <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
       </Router>
     </Provider>
   );
