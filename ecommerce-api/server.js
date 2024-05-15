@@ -6,11 +6,23 @@ const productRoutes = require('./routes/productRoutes');
 
 const app = express();
 
+// Connect to MongoDB
 connectDB();
 
-app.use(cors());
+// CORS configuration
+const corsOptions = {
+  origin: 'http://localhost:3000', // Replace with your frontend's URL
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204
+};
+
+app.use(cors(corsOptions));
+
+// Parse JSON bodies
 app.use(express.json());
 
+// Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 

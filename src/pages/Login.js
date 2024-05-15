@@ -1,21 +1,32 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../redux/slices/authSlice';
-import AuthForm from '../components/Auth/AuthForm';
+import { useForm } from 'react-hook-form';
+import { login } from '../services/auth';
+import { login as loginAction } from '../redux/slices/authSlice';
 
 const Login = () => {
+  const { register, handleSubmit } = useForm();
   const dispatch = useDispatch();
   const status = useSelector((state) => state.auth.status);
   const error = useSelector((state) => state.auth.error);
 
-  const onSubmit = (data) => {
-    dispatch(login(data));
+  const onSubmit = async (data) => {
+    try {
+      const userData = await login(data);
+      dispatch(loginAction(userData));
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
     <div>
       <h2>Login</h2>
-      <AuthForm onSubmit={onSubmit} isSignup={false} />
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input {...register('email')} placeholder="Email" required />
+        <input {...register('password')} type="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
       {status === 'loading' && <div>Loading...</div>}
       {status === 'failed' && <div>{error}</div>}
     </div>
