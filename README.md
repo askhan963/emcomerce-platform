@@ -1,70 +1,129 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# E-Commerce Platform
 
-## Available Scripts
+A fully functional e-commerce platform built with React.js, Redux, and TailwindCSS for the frontend and Express.js for the backend. The application includes features such as product listing, product details, cart management, checkout process, user authentication, and more.
+## Demo
 
-In the project directory, you can run:
+Watch the demo on YouTube: [E-Commerce Platform Demo](https://www.youtube.com/watch?v=FNIzKc1O4-M)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Product Listing**: Display a list of products fetched from an API.
+- **Product Details**: View detailed information about each product.
+- **Cart Management**: Add, remove, and manage product quantities in the cart.
+- **Checkout Process**: Multi-step checkout process including shipping and payment details.
+- **User Authentication**: Sign up, log in, and log out functionality using JWT.
+- **Responsive Design**: Fully responsive design using TailwindCSS.
+- **Notifications**: User feedback through toast notifications using `react-toastify`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Screenshots
 
-### `npm test`
+![Home](./screenshots/home.png)
+![Product Details](./screenshots/product-details.png)
+![Cart](./screenshots/cart.png)
+![Checkout](./screenshots/checkout.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setup and Installation
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js (v14.x or later)
+- npm or yarn
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Backend Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
 
-### `npm run eject`
+   ```sh
+   git clone https://github.com/yourusername/ecommerce-platform.git
+   cd ecommerce-platform
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Navigate to the backend directory and install dependencies:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```sh
+   cd backend
+   npm install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Create a `.env` file in the backend directory and add the following environment variables:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```env
+   PORT=5000
+   MONGO_URI=your_mongodb_connection_string
+   JWT_SECRET=your_jwt_secret
+   ```
 
-## Learn More
+4. Start the backend server:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```sh
+   npm start
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Frontend Setup
 
-### Code Splitting
+1. Navigate to the frontend directory and install dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```sh
+   cd frontend
+   npm install
+   ```
 
-### Analyzing the Bundle Size
+2. Start the frontend development server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ```sh
+   npm start
+   ```
 
-### Making a Progressive Web App
+### Running the Application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Ensure both backend and frontend servers are running.
+- Open your browser and navigate to `http://localhost:3000` to view the application.
 
-### Advanced Configuration
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **Home Page**: View all products.
+- **Product Details**: Click on a product to view details.
+- **Add to Cart**: Add products to your cart from the product details page.
+- **Checkout**: Proceed to checkout from the cart page.
+- **Authentication**: Sign up or log in to manage your cart and checkout.
 
-### Deployment
+## Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Frontend
 
-### `npm run build` fails to minify
+- React.js
+- Redux
+- TailwindCSS
+- react-router-dom
+- react-toastify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Backend
+
+- Express.js
+- MongoDB
+- Mongoose
+- JWT for authentication
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request for any changes you would like to make.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/YourFeature`)
+3. Commit your Changes (`git commit -m 'Add some feature'`)
+4. Push to the Branch (`git push origin feature/YourFeature`)
+5. Open a Pull Request
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## Contact
+
+Muhammad Awais Khan - [awaiskhanniazi963@gmail.com](mailto:awaiskhanniazi963@gmail.com)
+
+Project Link: [https://github.com/askhan963/ecommerce-platform](https://github.com/askhan963/ecommerce-platform)
+
+
+
