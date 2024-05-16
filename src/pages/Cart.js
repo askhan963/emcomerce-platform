@@ -5,7 +5,7 @@ import { incrementQuantity, decrementQuantity, removeFromCart } from '../redux/s
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
-
+// 
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow container mx-auto px-4 py-8">
