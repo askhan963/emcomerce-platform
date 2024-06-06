@@ -5,6 +5,18 @@ import {jwtDecode} from 'jwt-decode';
 // Set base URL for axios to target the server at http://localhost:5000
 axios.defaults.baseURL = 'http://localhost:5000';
 
+// Check for token in localStorage and decode it if available
+const token = localStorage.getItem('token');
+let user = null;
+if (token) {
+  try {
+    user = jwtDecode(token);
+  } catch (error) {
+    console.error('Failed to decode token:', error);
+    localStorage.removeItem('token');
+  }
+}
+
 export const login = createAsyncThunk('auth/login', async (credentials) => {
   try {
     const response = await axios.post('/api/auth/login', credentials);
@@ -32,7 +44,7 @@ export const signup = createAsyncThunk('auth/signup', async (credentials) => {
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
-    user: null,
+    user: user,
     status: 'idle',
     error: null,
   },
