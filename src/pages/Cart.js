@@ -1,11 +1,12 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { incrementQuantity, decrementQuantity, removeFromCart } from '../redux/slices/cartSlice';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
-// 
+
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow container mx-auto px-4 py-8">
@@ -50,12 +51,12 @@ const Cart = () => {
               Total: ${cartItems.reduce((total, item) => total + item.price * item.quantity, 0)}
             </div>
             <div className="text-right">
-              <button
-                onClick={() => window.location.href = '/checkout'}
+              <Link
+                to="/checkout"
                 className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
               >
                 Proceed to Checkout
-              </button>
+              </Link>
             </div>
           </div>
         )}
